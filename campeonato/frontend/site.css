@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+*
+{
+  padding:0;
+  margin:0;
+  border:0;
+  box-sizing:border-box;
+}
+
+body {
+  background-color: #d3d9dc;
+  font-family: "Fira Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* O corpo ocupará sempre a altura total da tela */
+  margin: 0; /* Remove margens padrão */
+}
+
+img
+{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  vertical-align:middle;
+}
+
+header
+{
+  width:100%;
+  background-color:#212675;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+header .logo
+{
+  width:200px;
+  color: #c8fe08;
+}
+
+header span
+{
+  font-size:24pt;
+  padding:10px 0px;
+}
+
+/* Expande o main para ocupar o espaço restante */
+main {
+  flex-grow: 1; /* Faz o main expandir para preencher o espaço restante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; /* Adiciona algum espaçamento interno */
+  width: 100%;
+}
+
+/* Para centralizar e ajustar o conteúdo do resumo */
+.wrapper {
+  flex-grow: 1; /* Permite que o wrapper também cresça, caso necessário */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.emblema
+{
+  width:50px;
+}
+
+footer
+{
+  width:100%;
+  background-color:#212675;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  padding:100px 0px;
+  align-items:center;
+}
+
+footer .logo
+{
+  width:100px;
+  color:#e4ff83;
+}
+
+footer span
+{
+  padding:15px 0px;
+}
+
+nav
+{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:20px 0px;
+  margin:0 auto;
+}
+
+nav ul
+{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  margin:0;
+  padding:0;
+}
+
+nav ul li a {
+  color:white;
+  text-decoration:none;
+  font-weight:400;
+  transition:0.5s;
+}
+
+nav ul li a:hover {
+  color:#c8fe08;
+  transition:0.3s;
+}
+
+.teams-grid
+{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.team-card {
+  background-color: #e6f0f5;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Coloca o nome abaixo do emblema */
+  align-items: center;
+}
+
+.team-card img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px; /* Espaço entre o emblema e o nome */
+}
+
+.team-name {
+  font-weight: 600;
+  color: #2f36a1; /* Azul médio */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.team-name:hover {
+  color: #212675; /* Azul escuro ao passar o mouse */
+}
+
+.team-details {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.team-details img {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.team-details h1 {
+  font-size: 24px;
+  color: #2f36a1;
+  text-transform: uppercase;
+  padding: 15px 0px;
+}
+
+.team-details p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.back-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #212675; /* Azul escuro */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+  background-color: #c8fe08; /* Verde fluorescente */
+  color: #212675; /* Texto azul escuro no hover */
+}
+
+/* Estilo para a tabela de classificação */
+.classificacao-tabela {
+  width: 100%;
+  max-width: 1200px; /* Define um limite de largura */
+  margin: 20px auto;
+  border-collapse: collapse; /* Remove bordas duplicadas */
+  text-align: center;
+  background-color: #ffffff; /* Fundo branco */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  border-radius: 10px; /* Bordas arredondadas */
+  overflow: hidden; /* Ajusta o conteúdo à borda arredondada */
+}
+
+.classificacao-tabela th, .classificacao-tabela td {
+  padding: 10px 15px;
+  border: 1px solid #dddddd; /* Bordas suaves */
+  font-size: 16px;
+}
+
+.classificacao-tabela th {
+  background-color: #212675; /* Cor do cabeçalho */
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.classificacao-tabela tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fundo alternado */
+}
+
+.classificacao-tabela tbody tr:hover {
+  background-color: #e6e6e6; /* Destaque ao passar o mouse */
+}
+
+.classificacao-tabela img {
+  width: 40px;
+  height: auto;
+}
+
+.zona-rebaixamento {
+  background-color: #ffcccc !important; /* Destaca os últimos 4 times */
+}
+
+
+select {
+  padding: 12px 20px; /* Mais espaçamento interno */
+  font-size: 16px;
+  border: 2px solid #212675; /* Borda azul */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #ffffff; /* Fundo branco */
+  color: #212675; /* Texto azul */
+  transition: all 0.3s ease; /* Animações suaves */
+  width: auto;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: #f0f4ff; /* Fundo leve ao passar o mouse */
+  border-color: #c8fe08; /* Destaca a borda */
+}
+
+select:focus {
+  outline: none;
+  border-color: #c8fe08; /* Destaca a borda no foco */
+  box-shadow: 0 0 8px rgba(200, 254, 8, 0.5); /* Sombra no foco */
+}
+
+/* Espaçamento ao redor do seletor */
+label[for="rodadas"] {
+  margin-bottom: 10px; /* Espaçamento entre o texto e a lista suspensa */
+  display: block; /* Garante que o label fique em uma linha separada */
+  font-weight: bold; /* Destaca o texto */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Margem ao redor da lista suspensa */
+select {
+  margin-top: 15px; /* Espaçamento superior */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Espaçamento para o título */
+h1 {
+  margin-bottom: 20px; /* Adiciona espaço abaixo do título principal */
+  text-align: center; /* Centraliza o título */
+}
+
+/* Centralizar e ajustar o container principal */
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  margin-top: 30px; /* Espaçamento no topo da seção */
+}
+
+input[type="number"] {
+  width: 60px; /* Largura maior para acomodar os valores */
+  padding: 5px; /* Espaçamento interno para melhorar a aparência */
+  font-size: 16px; /* Tamanho da fonte maior */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 4px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o número */
+}
+
+input[type="number"]:focus {
+  border-color: #212675; /* Destaque na borda ao focar */
+  outline: none; /* Remove o contorno padrão */
+  box-shadow: 0 0 5px rgba(33, 38, 117, 0.5); /* Sombra no foco */
+}
+
+button {
+  padding: 8px 15px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte maior */
+  color: #ffffff; /* Texto branco */
+  background-color: #212675; /* Cor de fundo azul */
+  border: none; /* Remove a borda padrão */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de interação */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+button:hover {
+  background-color: #c8fe08; /* Cor de fundo ao passar o mouse */
+}
+
+button:focus {
+  outline: none; /* Remove o contorno padrão */
+  box-shadow: 0 0 5px rgba(33, 38, 117, 0.5); /* Sombra no foco */
+}
